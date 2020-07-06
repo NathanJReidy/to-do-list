@@ -1,0 +1,1 @@
+This project is a To Do List which showcases my javascript, html and css skills. 
