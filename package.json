@@ -1,0 +1,26 @@
+{
+  "name": "toDoList",
+  "version": "1.0.0",
+  "description": "This project is a To Do List which showcases my javascript, html and css skills.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress --mode=production",
+    "watch": "webpack --progress --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanJReidy/to-do-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanJReidy/to-do-list/issues"
+  },
+  "homepage": "https://github.com/NathanJReidy/to-do-list#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
