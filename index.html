@@ -1,14 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--  This site was created in Webflow. http://www.webflow.com  -->
+<!--  Last Published: Tue Jul 07 2020 05:15:24 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="5ef9660201f3d9022a479755" data-wf-site="5ef9660201f3d9838e479754">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/to-do-list-0e2a87.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]  }});</script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 <body>
-
-    <script src="main.js"></script>
-    
+  <div class="modalwrap" data-ix="new-interaction">
+    <div class="addprojectwrapper">
+      <div class="addprojectform w-form">
+        <form id="email-form-4" name="email-form-4" data-name="Email Form 4"><label for="name-2" class="projectnamelabel">Project Name</label><input type="text" class="pnamefield w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="" id="name-2"><label for="email-2" class="projectdeslabel">Project Description </label><input type="text" class="pdesfield w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="email-2" required="">
+          <div class="bottomflex"><input type="submit" value="Submit" data-wait="Please wait..." class="submitbtnproject w-button">
+            <div class="cancelbtnproject" data-ix="new-interaction-3">Cancel</div>
+          </div>
+        </form>
+        <div class="w-form-done">
+          <div>Thank you! Your submission has been received!</div>
+        </div>
+        <div class="w-form-fail">
+          <div>Oops! Something went wrong while submitting the form.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-layout-grid grid">
+    <div id="w-node-ce9a5f37dc5f-2a479755" class="containerleft">
+      <h2 class="projectsheading">Projects</h2>
+      <div class="dividerdiv"></div>
+      <div class="projectlist">
+        <div id="exampleProject" class="projectexample">
+          <div class="exampletextblock">Project Moonshot</div><img src="images/trash-icon.png" height="" width="20" alt="" class="exampletrash"></div>
+      </div>
+      <div class="addprojectcontainer">
+        <div class="addtask" data-ix="new-interaction-2"><img src="images/purple-plus.png" width="20" alt="" class="plusbtn">
+          <div class="addtasktext">Add Project </div>
+        </div>
+      </div>
+    </div>
+    <div class="containerright">
+      <div id="nameDescEdit" class="addblock">
+        <div class="insidediv">
+          <h1 class="projectname">Project Name</h1>
+        </div>
+        <div class="projectdescription">This text should contain the project description.</div>
+        <div class="editdiv">
+          <div class="edit-text">Edit</div><img src="images/edit-icon.png" width="17" alt="" class="editimg"></div>
+        <div class="divider"></div>
+      </div>
+      <div id="editProjectForm" class="addblock">
+        <div id="editProject" class="insidediv">
+          <div class="w-form">
+            <form id="email-form-3" name="email-form-3" data-name="Email Form 3"><input type="text" class="pnameform w-input" maxlength="256" name="name" data-name="Name" placeholder="Project Name" id="name"><input type="email" class="pdescform w-input" maxlength="256" name="email" data-name="Email" placeholder="Project Description" id="email" required="">
+              <div class="submitcontainer"><input type="submit" value="Submit" data-wait="Please wait..." class="formsubmit w-button">
+                <div class="formcancel">Cancel</div>
+              </div>
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="addTaskDiv" class="addblock">
+        <div class="addtask"><img src="images/purple-plus.png" width="20" alt="" class="plusbtn">
+          <div class="addtasktext">Add Task </div>
+        </div>
+      </div>
+      <div id="addTaskFormDiv" class="addblock">
+        <div class="div-block-10">
+          <div id="addFormDivBlock" class="form w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" class="form-3">
+              <div class="taskformdiv"><input type="text" class="taskfield w-input" maxlength="256" name="field" data-name="Field" placeholder="Enter task to complete" id="field" required=""><input type="text" class="datefield w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Enter date" id="field-2" required=""></div>
+              <div class="submittaskdiv"><a href="#" class="submittaskbtn w-button">Add Task</a>
+                <div class="canceltaskbtn">Cancel</div>
+              </div>
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="allTasks" class="addblock">
+        <div class="alllistedtasks">
+          <div class="leftdiv">
+            <div class="checkbox"></div>
+            <div class="tasktext">This is some text </div>
+          </div>
+          <div class="rightdiv">
+            <div class="rightrightdiv">
+              <div class="duedatetext">Due in X Days</div>
+            </div><img src="images/edit-icon.png" width="17" alt="" class="editimg"><img src="images/trash-icon.png" height="" width="20" alt="" class="exampletrash"></div>
+        </div>
+      </div>
+      <div id="editAllTasks" class="addblock">
+        <div id="editAllListedTasks" class="alllistedtasks">
+          <div class="div-block-11">
+            <div class="editalltasks">
+              <div class="edittasksform w-form">
+                <form id="email-form-2" name="email-form-2" data-name="Email Form 2" class="edittasksdivform"><input type="text" class="edittaskname w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="Task name" id="field-3" required=""><input type="text" class="edittaskdate w-input" maxlength="256" name="field-4" data-name="Field 4" placeholder="Date" id="field-4" required=""><input type="submit" value="Submit" data-wait="Please wait..." class="edittasksubmitbtn w-button">
+                  <div class="edittaskcancelbtn">Cancel</div>
+                </form>
+                <div class="w-form-done">
+                  <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="w-form-fail">
+                  <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5ef9660201f3d9838e479754" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script src="main.js"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>
