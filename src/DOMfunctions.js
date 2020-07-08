@@ -98,6 +98,41 @@ const newTask = (() => {
 })();
 
 const editTask = (() => {
+    const editBtn = document.querySelector("#allTasks > div > div.rightdiv > img.editimg");
+    const deleteBtn = document.querySelector("#allTasks > div > div.rightdiv > img.exampletrash");
+    const editInfo = document.querySelector('#editAllTasks.addblock');
+    const task = document.querySelector('#allTasks.addblock');
+    const cancelBtn = document.querySelector('.edittaskcancelbtn');
+    const submitBtn = document.querySelector('.edittasksubmitbtn');
+
+    function show() {
+        task.style.display = 'none';
+        editInfo.style.display = 'block';
+    }
+
+    function hide() {
+        task.style.display = 'block';
+        editInfo.style.display = 'none';
+    }
+
+    function deleteTask() {
+        task.style.display = 'none';
+    }
+
+    function submit() {
+        //Need to add something here 
+    }
+
+    return {
+        editBtn,
+        deleteBtn,
+        cancelBtn,
+        submitBtn,
+        show,
+        hide,
+        deleteTask,
+        submit,
+    }
 
 })();
 
