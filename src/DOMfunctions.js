@@ -45,5 +45,29 @@ const newTask = (() => {
     const submitBtn = document.querySelector('.submittaskbtn');
     const cancelBtn = document.querySelector('.canceltaskbtn');
 
+    function show() {
+        form.style.display = 'block';
+        addBtn.style.display = 'none';
+    }
+
+    function hide() {
+        form.style.display = 'none';
+        addBtn.style.display = 'block';
+        clear();       
+    }
+
+    function clear() {
+        name.value = '';
+        date.value = ''; 
+    }
+
+    function submit() {
+        createTask(name.value, date.value);
+        // Create createTask function to append a new task name and task date div to the allListedTasks parent div
+        clear();
+        hide();
+    
+    }
+
 
 })
