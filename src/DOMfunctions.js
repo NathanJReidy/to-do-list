@@ -20,9 +20,9 @@ const newProject = (() => {
 
 const editProject = (() => {
     const editBtn = document.querySelector('.editdiv');
-    const projectInfo = document.querySelector('#nameDescEdit');
+    const projectInfo = document.querySelector('#nameDescEdit.addblock');
 
-    const editProjectForm = document.querySelector('#editProjectForm');
+    const editProjectForm = document.querySelector('#editProjectForm.addblock');
     const name = document.querySelector('.pnameform');
     const description = document.querySelector('.pdescform');
     const submitBtn = document.querySelector('.formsubmit');
@@ -36,10 +36,11 @@ const editProject = (() => {
     function hide() {
         projectInfo.style.display = 'block';
         editProjectForm.style.display = 'none';
+        console.log("editProject HIDE TEST");
     }
 
     function submit() {
-        updateProject(name.value, description.value);
+        //updateProject(name.value, description.value);
         // Need to make a function that updates the project name and project description shown on the screen based on the inputted submitted values.
     }
 
@@ -54,7 +55,7 @@ const editProject = (() => {
 })();
 
 const newTask = (() => {
-    const addBtn = document.querySelector('.addtask');
+    const addBtn = document.querySelector('#addTaskDiv.addblock');
     const form = document.querySelector('#addTaskFormDiv');
     const name = document.querySelector('.taskfield');
     const date = document.querySelector('.datefield');
@@ -78,7 +79,7 @@ const newTask = (() => {
     }
 
     function submit() {
-        createTask(name.value, date.value);
+        //createTask(name.value, date.value);
         // Create createTask function to append a new task name and task date div to the allListedTasks parent div
         clear();
         hide();
@@ -100,4 +101,4 @@ const editTask = (() => {
 
 })();
 
-export {newProject, editProject, newTask, editTask}
+export {newProject, editProject, newTask, editTask};
