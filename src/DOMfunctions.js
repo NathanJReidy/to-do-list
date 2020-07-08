@@ -36,3 +36,14 @@ const editProject = (() => {
         // Need to make a function that updates the project name and project description shown on the screen based on the inputted submitted values.
     }
 })
+
+const newTask = (() => {
+    const addBtn = document.querySelector('.addtask');
+    const form = document.querySelector('#addTaskFormDiv');
+    const name = document.querySelector('.taskfield');
+    const date = document.querySelector('.datefield');
+    const submitBtn = document.querySelector('.submittaskbtn');
+    const cancelBtn = document.querySelector('.canceltaskbtn');
+
+
+})
