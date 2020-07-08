@@ -9,7 +9,14 @@ const newProject = (() => {
         // Need to create a createProject function that alters the project name and project description in right container.
     }
 
-})
+    return {
+        name,
+        description,
+        submitBtn,
+        cancelBtn,
+    }
+
+})();
 
 const editProject = (() => {
     const editBtn = document.querySelector('.editdiv');
@@ -35,7 +42,16 @@ const editProject = (() => {
         updateProject(name.value, description.value);
         // Need to make a function that updates the project name and project description shown on the screen based on the inputted submitted values.
     }
-})
+
+    return {
+        editBtn,
+        submitBtn,
+        cancelBtn,
+        show,
+        hide,
+        submit,
+    }
+})();
 
 const newTask = (() => {
     const addBtn = document.querySelector('.addtask');
@@ -69,5 +85,19 @@ const newTask = (() => {
     
     }
 
+    return {
+        addBtn,
+        submitBtn, 
+        cancelBtn,
+        show,
+        hide,
+        submit,
+    }
 
-})
+})();
+
+const editTask = (() => {
+
+})();
+
+export {newProject, editProject, newTask, editTask}
