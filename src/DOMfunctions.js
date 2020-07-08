@@ -10,3 +10,14 @@ const newProject = (() => {
     }
 
 })
+
+const editProject = (() => {
+    const editBtn = document.querySelector('.editdiv');
+    const projectInfo = document.querySelector('#nameDescEdit');
+    
+    const editProjectForm = document.querySelector('#editProjectForm');
+    const name = document.querySelector('.pnameform');
+    const description = document.querySelector('.pdescform');
+    const submitBtn = document.querySelector('.formsubmit');
+    const cancelBtn = document.querySelector('.formcancel');
+})
