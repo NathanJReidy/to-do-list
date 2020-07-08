@@ -1,4 +1,4 @@
-import {newProject, editProject, newTask, editTask} from './DOMfunctions'
+//import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 
 // Event listeners for editing project name and description 
 // editProject.editBtn.addEventListener('click', editProject.show);
@@ -20,3 +20,4 @@ import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 // PUT THE SAME CODE IN INDEX.JS. WHY IS THIS? SOMETHING TO DO
 // WITH WEBPACK? HOW DO I FIX THIS? WHEN I DO NPM RUN BUILD, 
 // IT DOESN'T LOOK LIKE THIS FILE IS INCLUDED IN THE BUILD. 
+console.log("EVENT LISTENER BIG BIG BIG TEST!");

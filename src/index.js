@@ -1,9 +1,6 @@
 import {initialLoad} from './DOMload'
 
 initialLoad(); 
-//editProject.hide();
-//newTask.hide();
-//editTask.hide();
 
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 
@@ -22,4 +19,5 @@ newTask.cancelBtn.addEventListener('click', newTask.hide);
 //newTask.submitBtn.addEventListener('click', newTask.submit);
 
 
-console.log("Event listener module!")
+console.log("Event listener module!");
+console.log("EVENT LISTENER 3!");

@@ -6,4 +6,5 @@ function initialLoad() {
     //editTask.hide();
 };
 
+console.log("DOM LOAD!");
 export {initialLoad};

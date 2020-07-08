@@ -101,4 +101,5 @@ const editTask = (() => {
 
 })();
 
+console.log("MASSIVE TEST! ")
 export {newProject, editProject, newTask, editTask};
