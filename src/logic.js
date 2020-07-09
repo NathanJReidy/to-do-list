@@ -19,3 +19,5 @@ const createTask = (name, date) => {
         complete: false,
     })
 }
+
+export {createProject, createTask}
