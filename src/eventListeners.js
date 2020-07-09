@@ -1,9 +1,27 @@
-//import {newProject, editProject, newTask, editTask} from './DOMfunctions'
+import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 
-// THIS EVENT LISTENER FILE IS NOT WORKING, BUT IT WORKS WHEN I
-// PUT THE SAME CODE IN INDEX.JS. WHY IS THIS? SOMETHING TO DO
-// WITH WEBPACK? HOW DO I FIX THIS? WHEN I DO NPM RUN BUILD, 
-// IT DOESN'T LOOK LIKE THIS FILE IS INCLUDED IN THE BUILD. 
+// Static event listeners 
+function eventListeners() {
+    // Event listeners for editing project name and description 
+    editProject.editBtn.addEventListener('click', editProject.show);
+    editProject.cancelBtn.addEventListener('click', editProject.hide);
+    editProject.submitBtn.addEventListener('click', () => {
+        editProject.submit();
+        console.log("HELLO NATHAN!");
+        editProject.hide();
+    })
 
+    // Event listeners for adding new task  
+    newTask.addBtn.addEventListener('click', newTask.show);
+    newTask.cancelBtn.addEventListener('click', newTask.hide);
+    //newTask.submitBtn.addEventListener('click', newTask.submit);
 
-console.log("EVENT LISTENER BIG BIG BIG TEST!");
+    // Event listeners for editing or deleting a specific task
+    editTask.deleteBtn.addEventListener('click', editTask.deleteTask);
+    editTask.editBtn.addEventListener('click', editTask.show);
+    editTask.cancelBtn.addEventListener('click', editTask.hide);
+    //editTask.submitBtn.addEventListener('click', editTask.submit);
+
+}
+
+export {eventListeners};
