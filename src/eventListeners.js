@@ -23,12 +23,13 @@ function eventListeners() {
 }
 
 
-// Dynamic event listeners for editing or deleting a specific task
+// Create dynamic event listeners for editing or deleting a specific task
 editTask.deleteBtn.addEventListener('click', editTask.deleteTask);
 editTask.editBtn.addEventListener('click', editTask.show);
 editTask.cancelBtn.addEventListener('click', editTask.hide);
 //editTask.submitBtn.addEventListener('click', editTask.submit);
 
+// Create dynamic event listeners for selecting (clicking) or deleting a specific project 
 
 
 export {eventListeners};

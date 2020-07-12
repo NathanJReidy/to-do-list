@@ -1,3 +1,5 @@
+import {createProject, createTask} from './logic'
+
 const newProject = (() => {
     const name = document.querySelector('.pnamefield');
     const description = document.querySelector('.pdesfield');
@@ -79,7 +81,7 @@ const newTask = (() => {
     }
 
     function submit() {
-        //createTask(name.value, date.value);
+        createTask(name.value, date.value);
         // Create createTask function to append a new task name and task date div to the allListedTasks parent div
         clear();
         hide();
@@ -136,5 +138,5 @@ const editTask = (() => {
 
 })();
 
-console.log("MASSIVE TEST! ")
+
 export {newProject, editProject, newTask, editTask};
