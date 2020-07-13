@@ -99,15 +99,20 @@ function loadTasks(task, index) {
     trashIcon.width = '20';
     trashIcon.classList.add('exampletrash');
 
-    allTasksContainer.appendChild(listedTasks);
-    allTasksContainer.appendChild(leftDiv);
+    // Append created elements to DOM
+
     leftDiv.appendChild(checkBox);
     leftDiv.appendChild(taskText);
-    allTasksContainer.appendChild(rightDiv);
-    rightDiv.appendChild(rightRightDiv);
+
+
     rightRightDiv.appendChild(dueDateText);
+    rightDiv.appendChild(rightRightDiv);
     rightDiv.appendChild(editIcon);
     rightDiv.appendChild(trashIcon);
+
+    allTasksContainer.appendChild(listedTasks);
+    allTasksContainer.appendChild(leftDiv);
+    allTasksContainer.appendChild(rightDiv);
 
 
 //     <div class="alllistedtasks">
