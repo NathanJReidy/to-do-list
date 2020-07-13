@@ -1,12 +1,15 @@
 import {allProjects} from './index'
 
 const createProject = (name, description) => {
+    clearActiveProjects();
     allProjects.push({
         name,
         description,
         toDoListItems: [],
         active: true,
     })
+    console.log("createProject ran successfully!")
+    console.log(allProjects);
 }
 
 const createTask = (name, date) => {
@@ -20,4 +23,12 @@ const createTask = (name, date) => {
     })
 }
 
-export {createProject, createTask}
+function clearActiveProjects() {
+    if (allProjects.length > 0) {
+        allProjects.forEach((project) => {
+            project.active = false;
+        })
+    }
+}
+
+export {createProject, createTask, clearActiveProjects}

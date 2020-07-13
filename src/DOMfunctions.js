@@ -1,13 +1,16 @@
-import {createProject, createTask} from './logic'
+import {createProject, createTask, addLatestProject} from './logic'
+import { resfreshProjects } from './DOMload';
 
 const newProject = (() => {
     const name = document.querySelector('.pnamefield');
     const description = document.querySelector('.pdesfield');
-    const submitBtn = document.querySelector('.submitbtnproject');
+    const submitBtn = document.querySelector("#email-form-4 > div > input");
     const cancelBtn = document.querySelector('.cancelbtnproject');
-
+    
     function submit() {
         createProject(name.value, description.value);
+        resfreshProjects();
+        console.log("newProject.submit function runs!")
         // Need to create a createProject function that alters the project name and project description in right container.
     }
 
@@ -16,6 +19,7 @@ const newProject = (() => {
         description,
         submitBtn,
         cancelBtn,
+        submit,
     }
 
 })();

@@ -16,7 +16,7 @@ function loadProjects() {
     //       <div class="exampletextblock">Project Moonshot</div><img src="images/trash-icon.png" height="" width="20" alt="" class="exampletrash"></div>
     //   </div>
         const container = document.querySelector('.projectlist');
-        
+       
         const mainDiv = document.createElement('div');
         mainDiv.id = "exampleProject";
         mainDiv.classList.add('projectexample');
@@ -31,13 +31,46 @@ function loadProjects() {
 
         const image = document.createElement('img');
         image.src = 'images/trash-icon.png';
+        image.width = '20';
         image.classList.add('exampletrash');
 
         subDiv.appendChild(image);
         mainDiv.appendChild(subDiv);
         container.appendChild(mainDiv);
+
+        console.log("funcion loadProjects runs! Should be added to DOM!");
     })
 }
+
+
+function clearProjects() {
+    const container = document.querySelector('.projectlist');
+    container.innerHTML = ''; 
+}
+
+function resfreshProjects() {
+    clearProjects();
+    loadProjects();
+    loadActiveProject();
+}
+
+function loadActiveProject() {
+    let activeProject = allProjects.filter((project) => project.active === true);
+    let activeProjectName = activeProject[0].name;
+    let activeProjectDescription = activeProject[0].description;
+
+    const projectNameDisplayed = document.querySelector('.projectname');
+    const projectDescriptionDisplayed = document.querySelector('.projectdescription');
+    const projectNameInput = document.querySelector('.pnameform');
+    const projectDescriptionInput = document.querySelector('.pdescform');
+
+    projectNameDisplayed.textContent = activeProjectName;
+    projectDescriptionDisplayed.textContent = activeProjectDescription;
+    projectNameInput.value = activeProjectName;
+    projectDescriptionInput.value = activeProjectDescription;
+
+}
+
 
 function switchProjects() {
     // for each potential project added in left container, when clicked
@@ -54,4 +87,4 @@ function updateProjectDetails() {
 
 
 
-export {initialLoad};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject};
