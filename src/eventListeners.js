@@ -17,7 +17,7 @@ function eventListeners() {
     // Event listeners for adding new task or canceling adding new task 
     newTask.addBtn.addEventListener('click', newTask.show);
     newTask.cancelBtn.addEventListener('click', newTask.hide);
-    //newTask.submitBtn.addEventListener('click', newTask.submit);
+    newTask.submitBtn.addEventListener('click', newTask.submit);
 
 
 }

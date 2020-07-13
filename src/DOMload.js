@@ -54,6 +54,17 @@ function resfreshProjects() {
     loadActiveProject();
 }
 
+function resfreshTaskList() {
+    clearTasks();
+    loadTasks();
+
+}
+
+function clearTasks() {
+    const taskContainer = document.querySelector('#allTasks');
+    taskContainer.innerHTML = '';
+}
+
 function loadActiveProject() {
     let activeProject = allProjects.filter((project) => project.active === true);
     let activeProjectName = activeProject[0].name;
