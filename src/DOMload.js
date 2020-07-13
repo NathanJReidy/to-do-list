@@ -65,6 +65,69 @@ function clearTasks() {
     taskContainer.innerHTML = '';
 }
 
+function loadTasks(task, index) {
+    const allTasksContainer = document.querySelector('#allTasks');
+
+    const listedTasks = document.createElement('div');
+    listedTasks.classList.add('alllistedtasks');
+
+    const leftDiv = document.createElement('div');
+    leftDiv.classList.add('leftdiv');
+    
+    const checkBox = document.createElement('div');
+    checkBox.classList.add('checkbox');
+    
+    const taskText = document.createElement('div');
+    taskText.classList.add('tasktext')
+
+    const rightDiv = document.createElement('div');
+    rightDiv.classList.add('rightdiv');
+
+    const rightRightDiv = document.createElement('div');
+    rightRightDiv.classList.add('rightrightdiv');
+
+    const dueDateText = document.createElement('div');
+    dueDateText.classList.add('duedatetext');
+
+    const editIcon = document.createElement('img');
+    editIcon.src = 'images/edit-icon.png';
+    editIcon.width = '17';
+    editIcon.classList.add('editimg');
+
+    const trashIcon = document.createElement('img');
+    trashIcon.src = 'images/trash-icon.png';
+    trashIcon.width = '20';
+    trashIcon.classList.add('exampletrash');
+
+    allTasksContainer.appendChild(listedTasks);
+    allTasksContainer.appendChild(leftDiv);
+    leftDiv.appendChild(checkBox);
+    leftDiv.appendChild(taskText);
+    allTasksContainer.appendChild(rightDiv);
+    rightDiv.appendChild(rightRightDiv);
+    rightRightDiv.appendChild(dueDateText);
+    rightDiv.appendChild(editIcon);
+    rightDiv.appendChild(trashIcon);
+
+
+//     <div class="alllistedtasks">
+//     <div class="leftdiv">
+//       <div class="checkbox"></div>
+//       <div class="tasktext">This is some text </div>
+//     </div>
+//     <div class="rightdiv">
+//       <div class="rightrightdiv">
+//         <div class="duedatetext">Due in X Days</div>
+//       </div><img src="images/edit-icon.png" width="17" alt="" class="editimg"><img src="images/trash-icon.png" height="" width="20" alt="" class="exampletrash"></div>
+//   </div>
+
+
+
+
+}
+
+
+
 function loadActiveProject() {
     let activeProject = allProjects.filter((project) => project.active === true);
     let activeProjectName = activeProject[0].name;
