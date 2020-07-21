@@ -54,10 +54,9 @@ function resfreshProjects() {
     loadActiveProject();
 }
 
-function resfreshTaskList() {
+function refreshTaskList() {
     clearTasks();
     loadActiveToDos();
-
 }
 
 function clearTasks() {
@@ -134,9 +133,9 @@ function loadTasks(task, index) {
 
 
 
-
-
 function loadActiveToDos() {
+    console.log("THE ERROR ARISES AT LOADACTIVETODOS");
+    console.log(allProjects);
     allProjects.forEach((project) => {
         project.toDoListItems.forEach((task, index) => {
             if (project.active === true){
@@ -145,8 +144,6 @@ function loadActiveToDos() {
         })
     })
 }
-
-
 
 
 
@@ -184,4 +181,4 @@ function updateProjectDetails() {
 
 
 
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, resfreshTaskList, clearTasks, loadTasks, loadActiveToDos};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos};

@@ -1,5 +1,5 @@
-import {createProject, createTask, addLatestProject} from './logic'
-import { resfreshProjects } from './DOMload';
+import {createProject, createTask, addLatestProject} from './logic';
+import {resfreshProjects, refreshTaskList, clearTasks, loadActiveToDos} from './DOMload';
 
 const newProject = (() => {
     const name = document.querySelector('.pnamefield');
@@ -65,7 +65,7 @@ const newTask = (() => {
     const form = document.querySelector('#addTaskFormDiv');
     const name = document.querySelector('.taskfield');
     const date = document.querySelector('.datefield');
-    const submitBtn = document.querySelector('.submittaskbtn');
+    const submitBtn = document.querySelector("#email-form > div.submittaskdiv > a");
     const cancelBtn = document.querySelector('.canceltaskbtn');
 
     function show() {
@@ -85,10 +85,10 @@ const newTask = (() => {
     }
 
     function submit() {
+        console.log("NEWTASK.SUBMIT RUNS!");
         createTask(name.value, date.value);
         refreshTaskList();
 
-        
         clear();
         hide();
     
