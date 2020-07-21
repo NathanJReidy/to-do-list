@@ -86,7 +86,7 @@ const newTask = (() => {
 
     function submit() {
         createTask(name.value, date.value);
-        //refreshTaskList();
+        refreshTaskList();
 
         
         clear();

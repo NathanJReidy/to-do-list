@@ -56,7 +56,7 @@ function resfreshProjects() {
 
 function resfreshTaskList() {
     clearTasks();
-    loadTasks();
+    loadActiveToDos();
 
 }
 
@@ -79,6 +79,7 @@ function loadTasks(task, index) {
     
     const taskText = document.createElement('div');
     taskText.classList.add('tasktext')
+    taskText.textContent = task.name;
 
     const rightDiv = document.createElement('div');
     rightDiv.classList.add('rightdiv');
@@ -88,6 +89,7 @@ function loadTasks(task, index) {
 
     const dueDateText = document.createElement('div');
     dueDateText.classList.add('duedatetext');
+    dueDateText.textContent = task.date; 
 
     const editIcon = document.createElement('img');
     editIcon.src = 'images/edit-icon.png';
@@ -182,4 +184,4 @@ function updateProjectDetails() {
 
 
 
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, resfreshTaskList, clearTasks, loadTasks, loadActiveToDos};
