@@ -31,4 +31,11 @@ function clearActiveProjects() {
     }
 }
 
-export {createProject, createTask, clearActiveProjects}
+function updateProject(name, description) {
+    let activeProject = allProjects.filter(project => project.active === true);
+    activeProject[0].name = name;
+    activeProject[0].description = description;
+}
+
+
+export {createProject, createTask, clearActiveProjects, updateProject}

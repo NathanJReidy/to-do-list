@@ -1,4 +1,4 @@
-import {createProject, createTask, addLatestProject} from './logic';
+import {createProject, createTask, addLatestProject, updateProject} from './logic';
 import {resfreshProjects, refreshTaskList, clearTasks, loadActiveToDos} from './DOMload';
 
 const newProject = (() => {
@@ -46,7 +46,8 @@ const editProject = (() => {
     }
 
     function submit() {
-        //updateProject(name.value, description.value);
+        updateProject(name.value, description.value);
+        resfreshProjects();
         // Need to make a function that updates the project name and project description shown on the screen based on the inputted submitted values.
     }
 

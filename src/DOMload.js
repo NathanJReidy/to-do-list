@@ -111,23 +111,10 @@ function loadTasks(task, index) {
     rightDiv.appendChild(editIcon);
     rightDiv.appendChild(trashIcon);
 
+    listedTasks.appendChild(leftDiv);
+    listedTasks.appendChild(rightDiv);
+
     allTasksContainer.appendChild(listedTasks);
-    allTasksContainer.appendChild(leftDiv);
-    allTasksContainer.appendChild(rightDiv);
-
-
-
-//     <div class="alllistedtasks">
-//     <div class="leftdiv">
-//       <div class="checkbox"></div>
-//       <div class="tasktext">This is some text </div>
-//     </div>
-//     <div class="rightdiv">
-//       <div class="rightrightdiv">
-//         <div class="duedatetext">Due in X Days</div>
-//       </div><img src="images/edit-icon.png" width="17" alt="" class="editimg"><img src="images/trash-icon.png" height="" width="20" alt="" class="exampletrash"></div>
-//   </div>
-
 
 }
 
@@ -139,7 +126,7 @@ function loadActiveToDos() {
     allProjects.forEach((project) => {
         project.toDoListItems.forEach((task, index) => {
             if (project.active === true){
-                loadToDos(task, index);
+                loadTasks(task, index);
             }
         })
     })
