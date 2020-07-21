@@ -115,6 +115,7 @@ function loadTasks(task, index) {
     allTasksContainer.appendChild(rightDiv);
 
 
+
 //     <div class="alllistedtasks">
 //     <div class="leftdiv">
 //       <div class="checkbox"></div>
@@ -127,9 +128,24 @@ function loadTasks(task, index) {
 //   </div>
 
 
-
-
 }
+
+
+
+
+
+function loadActiveToDos() {
+    allProjects.forEach((project) => {
+        project.toDoListItems.forEach((task, index) => {
+            if (project.active === true){
+                loadToDos(task, index);
+            }
+        })
+    })
+}
+
+
+
 
 
 

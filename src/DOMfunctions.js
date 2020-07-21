@@ -86,7 +86,9 @@ const newTask = (() => {
 
     function submit() {
         createTask(name.value, date.value);
-        // Create createTask function to append a new task name and task date div to the allListedTasks parent div
+        //refreshTaskList();
+
+        
         clear();
         hide();
     
