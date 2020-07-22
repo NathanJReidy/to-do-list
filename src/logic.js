@@ -43,5 +43,15 @@ function swapProject(index) {
     currentProject.active = true;
 }
 
+function deleteProject(index) {
+    if (allProjects.length > 1) {
+        // Delete project from index specified.
+        allProjects.splice(index, 1);
+        // Select last project and make it active.
+        allProjects[allProjects.length - 1].active = true;
+    }
+}
 
-export {createProject, createTask, clearActiveProjects, updateProject}
+
+
+export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject}
