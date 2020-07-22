@@ -1,5 +1,6 @@
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 import {allProjects} from './index'
+import { createProjectBtnListeners } from './eventListeners';
 
 function initialLoad() {
     editProject.hide();
@@ -34,8 +35,8 @@ function loadProjects() {
         image.width = '20';
         image.classList.add('exampletrash');
 
-        subDiv.appendChild(image);
         mainDiv.appendChild(subDiv);
+        mainDiv.appendChild(image);
         container.appendChild(mainDiv);
 
         console.log("funcion loadProjects runs! Should be added to DOM!");
@@ -52,6 +53,7 @@ function resfreshProjects() {
     clearProjects();
     loadProjects();
     loadActiveProject();
+    createProjectBtnListeners();
 }
 
 function refreshTaskList() {
