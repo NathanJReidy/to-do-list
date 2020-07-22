@@ -1,6 +1,6 @@
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
-import { changeProject } from './DOMload';
-import {swapProject} from './logic';
+import { refreshPage } from './DOMload';
+import {swapProject, deleteProject} from './logic';
 
 // Static event listeners 
 function eventListeners() {
@@ -38,10 +38,8 @@ function createProjectBtnListeners(){
         btn.addEventListener('click', (e) => {
             if (e.target.className != 'exampletrash') {
                 let datasetValue = e.target.dataset.value;
-                console.log("SUCCESS NATHAN!");
-                console.log(datasetValue);
                 swapProject(datasetValue);
-                changeProject();
+                refreshPage();
             }
         })
     })
@@ -50,8 +48,9 @@ function createProjectBtnListeners(){
     deleteProjectBtns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             let datasetValue = e.target.parentNode.dataset.value;
-            //deleteProject(datasetValue);
-            //pageRefresh();
+            console.log(`The datasetValue (index) is ${datasetValue}`);
+            deleteProject(datasetValue);
+            refreshPage();
         })
     })
 

@@ -10,7 +10,6 @@ const newProject = (() => {
     function submit() {
         createProject(name.value, description.value);
         resfreshProjects();
-        console.log("newProject.submit function runs!")
         // Need to create a createProject function that alters the project name and project description in right container.
     }
 
@@ -42,7 +41,6 @@ const editProject = (() => {
     function hide() {
         projectInfo.style.display = 'block';
         editProjectForm.style.display = 'none';
-        console.log("editProject HIDE TEST");
     }
 
     function submit() {

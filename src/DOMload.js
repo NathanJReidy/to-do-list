@@ -39,7 +39,6 @@ function loadProjects() {
         mainDiv.appendChild(image);
         container.appendChild(mainDiv);
 
-        console.log("funcion loadProjects runs! Should be added to DOM!");
     })
 }
 
@@ -61,7 +60,7 @@ function refreshTaskList() {
     loadActiveToDos();
 }
 
-function changeProject() {
+function refreshPage() {
     resfreshProjects();
     refreshTaskList();
 }
@@ -128,8 +127,6 @@ function loadTasks(task, index) {
 
 
 function loadActiveToDos() {
-    console.log("THE ERROR ARISES AT LOADACTIVETODOS");
-    console.log(allProjects);
     allProjects.forEach((project) => {
         project.toDoListItems.forEach((task, index) => {
             if (project.active === true){
@@ -160,19 +157,4 @@ function loadActiveProject() {
 }
 
 
-function switchProjects() {
-    // for each potential project added in left container, when clicked
-    // it needs to change the project name, project description and to do
-    // tasks in the right container to match it 
-}
-
-function updateProjectDetails() {
-    // in right container, when edit button of project name/desc is clicked,
-    // followed by the submit button, the project name and description in that 
-    // container needs to be changed to include the updated details, AND
-    // the left container project name needs to change to refelct the updated details
-}
-
-
-
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, changeProject};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage};
