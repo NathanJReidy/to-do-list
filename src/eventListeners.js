@@ -1,4 +1,5 @@
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
+import { changeProject } from './DOMload';
 
 // Static event listeners 
 function eventListeners() {
@@ -38,6 +39,8 @@ function createProjectBtnListeners(){
                 let datasetValue = e.target.dataset.value;
                 console.log("SUCCESS NATHAN!");
                 console.log(datasetValue);
+                swapProject(datasetValue);
+                changeProject();
             }
         })
     })

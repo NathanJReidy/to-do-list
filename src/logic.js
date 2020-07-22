@@ -37,5 +37,11 @@ function updateProject(name, description) {
     activeProject[0].description = description;
 }
 
+function swapProject(index) {
+    clearActiveProjects();
+    let currentProject = allProjects[index];
+    currentProject.active = true;
+}
+
 
 export {createProject, createTask, clearActiveProjects, updateProject}
