@@ -44,10 +44,10 @@ function swapProject(index) {
 }
 
 function deleteProject(index) {
-    if (allProjects.length > 1) {
-        // Delete project from index specified.
-        allProjects.splice(index, 1);
-        // Select last project and make it active.
+    // Delete project from index specified.
+    allProjects.splice(index, 1);
+    // Select last project (if it exists) and make it active.
+    if (allProjects.length >= 1) {
         allProjects[allProjects.length - 1].active = true;
     }
 }

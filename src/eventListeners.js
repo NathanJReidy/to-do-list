@@ -47,7 +47,8 @@ function createProjectBtnListeners(){
     let deleteProjectBtns = document.querySelectorAll('.exampletrash');
     deleteProjectBtns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
-            let datasetValue = e.target.parentNode.dataset.value;
+            let datasetValue = e.target.parentElement.firstElementChild.dataset.value;
+            console.log(e);
             console.log(`The datasetValue (index) is ${datasetValue}`);
             deleteProject(datasetValue);
             refreshPage();
@@ -55,9 +56,6 @@ function createProjectBtnListeners(){
     })
 
 }
-
-
-
 
 
 
