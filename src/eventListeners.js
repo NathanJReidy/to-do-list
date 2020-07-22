@@ -30,6 +30,19 @@ editTask.cancelBtn.addEventListener('click', editTask.hide);
 //editTask.submitBtn.addEventListener('click', editTask.submit);
 
 // Create dynamic event listeners for selecting (clicking) or deleting a specific project 
+function createProjectBtnListeners(){
+    let projectBtns = document.querySelectorAll('.projectexample');
+    projectBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            if (e.target.className != 'exampletrash') {
+                console.log("SUCCESS NATHAN!");
+            }
+        })
+    })
+}
 
 
-export {eventListeners};
+
+
+
+export {eventListeners, createProjectBtnListeners};
