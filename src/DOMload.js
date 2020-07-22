@@ -61,6 +61,11 @@ function refreshTaskList() {
     loadActiveToDos();
 }
 
+function changeProject() {
+    resfreshProjects();
+    refreshTaskList();
+}
+
 function clearTasks() {
     const taskContainer = document.querySelector('#allTasks');
     taskContainer.innerHTML = '';
@@ -170,4 +175,4 @@ function updateProjectDetails() {
 
 
 
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, changeProject};
