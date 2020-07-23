@@ -1,6 +1,6 @@
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
-import { refreshPage } from './DOMload';
-import {swapProject, deleteProject} from './logic';
+import { refreshPage, refreshTaskList } from './DOMload';
+import {swapProject, deleteProject, deleteTask} from './logic';
 
 // Static event listeners 
 function eventListeners() {
@@ -62,9 +62,10 @@ function createTaskListeners() {
     let deleteTaskBtns = document.querySelectorAll('#tasktrash.exampletrash');
     deleteTaskBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            console.log(e);
-            console.log("IT WORKED!!!");
-            //let datasetValue = e.
+            datasetValue = e.target.parentNode.parentNode.dataset.value;
+            deleteTask(datasetValue);
+            refreshTaskList();
+            
         })
     })
 }

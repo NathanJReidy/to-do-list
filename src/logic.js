@@ -52,6 +52,11 @@ function deleteProject(index) {
     }
 }
 
+function deleteTask(index) {
+    let activeProject = allProjects.filter(project => project.active === true);
+    let activeTasks = activeProject[0].toDoListItems;
+    activeTasks.splice(index, 1);
+}
 
 
-export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject}
+export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask}

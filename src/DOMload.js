@@ -76,6 +76,7 @@ function loadTasks(task, index) {
 
     const listedTasks = document.createElement('div');
     listedTasks.classList.add('alllistedtasks');
+    listedTasks.dataset.value = index;
 
     const leftDiv = document.createElement('div');
     leftDiv.classList.add('leftdiv');
