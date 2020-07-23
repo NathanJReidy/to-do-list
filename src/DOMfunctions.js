@@ -112,14 +112,14 @@ const editTask = (() => {
     const cancelBtn = document.querySelector('.edittaskcancelbtn');
     const submitBtn = document.querySelector('.edittasksubmitbtn');
 
-    function show() {
-        task.style.display = 'none';
-        editInfo.style.display = 'block';
+    function show(index) {
+        task[index].style.display = 'none';
+        editInfo[index].style.display = 'block';
     }
 
-    function hide() {
-        task.style.display = 'block';
-        editInfo.style.display = 'none';
+    function hide(index) {
+        task[index].style.display = 'block';
+        editInfo[index].style.display = 'none';
     }
 
     function deleteTask() {

@@ -102,6 +102,7 @@ function loadTasks(task, index) {
     editIcon.src = 'images/edit-icon.png';
     editIcon.width = '17';
     editIcon.classList.add('editimg');
+    editIcon.id = 'editTask';
 
     const trashIcon = document.createElement('img');
     trashIcon.src = 'images/trash-icon.png';

@@ -62,10 +62,19 @@ function createTaskListeners() {
     let deleteTaskBtns = document.querySelectorAll('#tasktrash.exampletrash');
     deleteTaskBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            datasetValue = e.target.parentNode.parentNode.dataset.value;
+            let datasetValue = e.target.parentNode.parentNode.dataset.value;
             deleteTask(datasetValue);
             refreshTaskList();
             
+        })
+    })
+
+    let editTaskBtns = document.querySelectorAll('#editTask.editimg');
+    editTaskBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            let datasetValue = e.target.parentNode.parentNode.dataset.value;
+            
+
         })
     })
 }
