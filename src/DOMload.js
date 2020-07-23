@@ -1,6 +1,6 @@
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 import {allProjects} from './index'
-import { createProjectBtnListeners } from './eventListeners';
+import { createProjectBtnListeners, createTaskListeners } from './eventListeners';
 
 function initialLoad() {
     editProject.hide();
@@ -58,6 +58,7 @@ function resfreshProjects() {
 function refreshTaskList() {
     clearTasks();
     loadActiveToDos();
+    createTaskListeners();
 }
 
 function refreshPage() {
@@ -105,6 +106,7 @@ function loadTasks(task, index) {
     trashIcon.src = 'images/trash-icon.png';
     trashIcon.width = '20';
     trashIcon.classList.add('exampletrash');
+    trashIcon.id = 'tasktrash';
 
     // Append created elements to DOM
 

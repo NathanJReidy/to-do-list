@@ -57,6 +57,16 @@ function createProjectBtnListeners(){
 
 }
 
+function createTaskListeners() {
 
+    let deleteTaskBtns = document.querySelectorAll('#tasktrash.exampletrash');
+    deleteTaskBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            console.log(e);
+            console.log("IT WORKED!!!");
+            //let datasetValue = e.
+        })
+    })
+}
 
-export {eventListeners, createProjectBtnListeners};
+export {eventListeners, createProjectBtnListeners, createTaskListeners};
