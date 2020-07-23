@@ -5,7 +5,8 @@ import { createProjectBtnListeners, createTaskListeners } from './eventListeners
 function initialLoad() {
     editProject.hide();
     newTask.hide();
-    editTask.hide();
+    //editTask.hide();
+    editTask.disappear();
 };
 
 function loadProjects() {
@@ -72,6 +73,7 @@ function clearTasks() {
 }
 
 function loadTasks(task, index) {
+    // Create UI for tasks that are shown
     const allTasksContainer = document.querySelector('#allTasks');
 
     const listedTasks = document.createElement('div');
@@ -125,6 +127,66 @@ function loadTasks(task, index) {
     listedTasks.appendChild(rightDiv);
 
     allTasksContainer.appendChild(listedTasks);
+
+    // Create the edit tasks UI 
+    //let allForms = document.querySelectorAll('#editAllTasks.addblock');
+    //let allTasks = document.querySelectorAll('#allTasks.addblock');
+
+    const editAllTasks = document.createElement('div');
+    editAllTasks.classList.add('#editAllTasks.addblock');
+
+    const editAllListedTasks = document.createElement('div');
+    editAllListedTasks.classList.add('#editAllListedTasks.alllistedtasks');
+
+    const divBlock11 = document.createElement('div');
+    divBlock11.classList.add('.div-block-11');
+
+    const editalltasksagain = document.createElement('div');
+    editalltasksagain.classList.add('.editalltasks');
+
+    const editTasksForm = document.createElement('div');
+    editTasksForm.classList.add('edittasksform');
+    editTasksForm.classList.add('w-form');
+
+    const form = document.createElement('form');
+    form.classList.add('.edittasksdivform');
+    form.id = 'email-form-2';
+
+    const inputName = document.createElement('input');
+    inputName.classList.add('edittaskname');
+    inputName.classList.add('w-input');
+    inputName.id = 'field-3';
+    inputName.setAttribute("type", "text");
+    inputName.value = task.name;
+
+    const inputDate = document.createElement('input');
+    inputDate.classList.add('edittaskdate');
+    inputDate.classList.add('w-input');
+    inputDate.id = 'field-4';
+    inputDate.setAttribute("type", "text")
+    inputDate.value = task.date;
+
+    const submitBtn = document.createElement('input');
+    submitBtn.classList.add('edittasksubmitbtn');
+    submitBtn.classList.add('w-button');
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.value = "Submit";
+
+    const cancelBtn = document.createElement('div');
+    cancelBtn.classList.add('edittaskcancelbtn');
+    cancelBtn.textContent = "Cancel";
+
+    // Append everything:
+    form.appendChild(inputName);
+    form.appendChild(inputDate);
+    form.appendChild(submitBtn);
+    form.appendChild(cancelBtn);
+
+    editTasksForm.appendChild(form);
+    editalltasksagain.appendChild(editTasksForm);
+    divBlock11.appendChild(editalltasksagain);
+    editAllListedTasks.appendChild(divBlock11);
+    editAllTasks.appendChild(editAllListedTasks);
 
 }
 

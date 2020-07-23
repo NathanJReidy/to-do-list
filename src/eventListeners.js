@@ -26,9 +26,9 @@ function eventListeners() {
 
 
 // Create dynamic event listeners for editing or deleting a specific task
-editTask.deleteBtn.addEventListener('click', editTask.deleteTask);
-editTask.editBtn.addEventListener('click', editTask.show);
-editTask.cancelBtn.addEventListener('click', editTask.hide);
+//editTask.deleteBtn.addEventListener('click', editTask.deleteTask);
+//editTask.editBtn.addEventListener('click', editTask.show);
+//editTask.cancelBtn.addEventListener('click', editTask.hide);
 //editTask.submitBtn.addEventListener('click', editTask.submit);
 
 // Create dynamic event listeners for selecting (clicking) or deleting a specific project 
@@ -73,7 +73,8 @@ function createTaskListeners() {
     editTaskBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let datasetValue = e.target.parentNode.parentNode.dataset.value;
-            
+            console.log(`datasetValue is ${datasetValue}`);
+            editTask.show(datasetValue);
 
         })
     })

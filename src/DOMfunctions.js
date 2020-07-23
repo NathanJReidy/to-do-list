@@ -112,14 +112,22 @@ const editTask = (() => {
     const cancelBtn = document.querySelector('.edittaskcancelbtn');
     const submitBtn = document.querySelector('.edittasksubmitbtn');
 
+    let allForms = document.querySelectorAll('#editAllTasks.addblock');
+    let allTasks = document.querySelectorAll('#allTasks.addblock');
+
     function show(index) {
-        task[index].style.display = 'none';
-        editInfo[index].style.display = 'block';
+        allTasks[index].style.display = 'none';
+        allForms[index].style.display = 'block';
     }
 
     function hide(index) {
-        task[index].style.display = 'block';
-        editInfo[index].style.display = 'none';
+        allTasks[index].style.display = 'block';
+        allForms[index].style.display = 'none';
+    }
+
+    function disappear() {
+        task.style.display = 'block';
+        editInfo.style.display = 'none';
     }
 
     function deleteTask() {
@@ -137,6 +145,7 @@ const editTask = (() => {
         submitBtn,
         show,
         hide,
+        disappear,
         deleteTask,
         submit,
     }
