@@ -13,12 +13,18 @@ const newProject = (() => {
         // Need to create a createProject function that alters the project name and project description in right container.
     }
 
+    function hide() {
+        newProjectForm = document.querySelector('.modalwrap');
+        newProjectForm.style.display = 'none';
+    }
+
     return {
         name,
         description,
         submitBtn,
         cancelBtn,
         submit,
+        hide,
     }
 
 })();

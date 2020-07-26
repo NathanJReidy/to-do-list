@@ -66,4 +66,4 @@ function updateTask(index, name, date) {
     activeTask.date = date;
 }
 
-export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask}
+export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask, updateTask}

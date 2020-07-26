@@ -6,7 +6,10 @@ import {swapProject, deleteProject, deleteTask} from './logic';
 function eventListeners() {
     
     //Event listener for submitting new project
-    newProject.submitBtn.addEventListener('click', newProject.submit);
+    newProject.submitBtn.addEventListener('click', () => {
+        newProject.submit();
+        newProject.hide();
+    })
 
     // Event listeners for editing project name and description 
     editProject.editBtn.addEventListener('click', editProject.show);
