@@ -214,9 +214,14 @@
 
 .projectexample:hover {
   background-color: #f7f7f7;
+  cursor: pointer;
 }
 
 .projectexample:active {
+  background-color: #f7f7f7;
+}
+
+.projectexample.active {
   background-color: #f7f7f7;
 }
 

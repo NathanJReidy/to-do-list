@@ -22,6 +22,9 @@ function loadProjects() {
         const mainDiv = document.createElement('div');
         mainDiv.id = "exampleProject";
         mainDiv.classList.add('projectexample');
+        if (project.active === true) {
+            mainDiv.classList.add('active');
+        }
 
         const subDiv = document.createElement('div');
         subDiv.classList.add('exampletextBlock');
