@@ -1,6 +1,6 @@
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 import { refreshPage, refreshTaskList } from './DOMload';
-import {swapProject, deleteProject, deleteTask} from './logic';
+import {swapProject, deleteProject, deleteTask, completeTask} from './logic';
 
 // Static event listeners 
 function eventListeners() {
@@ -67,7 +67,8 @@ function createTaskListeners() {
             let datasetValue = e.target.parentNode.parentNode.dataset.value;
             console.log(datasetValue);
             completeTask(datasetValue);
-            btn.textContent = "x";
+            editTask.checkbox(btn);
+            //btn.textContent = "x";
         })
     })
 

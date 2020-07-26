@@ -158,6 +158,10 @@ const editTask = (() => {
         updateTask(index, name, date);
     }
 
+    function checkbox(btn) {
+        btn.classList.toggle('complete'); 
+    }
+
     return {
         editBtn,
         deleteBtn,
@@ -168,6 +172,7 @@ const editTask = (() => {
         disappear,
         deleteTask,
         submit,
+        checkbox,
     }
 
 })();
