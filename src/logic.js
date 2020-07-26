@@ -77,4 +77,4 @@ function completeTask(index) {
     }
 }
 
-export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask, updateTask}
+export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask, updateTask, completeTask}
