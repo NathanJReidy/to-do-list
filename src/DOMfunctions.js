@@ -1,5 +1,5 @@
 import {createProject, createTask, addLatestProject, updateProject, updateTask} from './logic';
-import {resfreshProjects, refreshTaskList, clearTasks, loadActiveToDos} from './DOMload';
+import {resfreshProjects, refreshTaskList, clearTasks, loadActiveToDos, refreshPage} from './DOMload';
 
 const newProject = (() => {
     const name = document.querySelector('.pnamefield');
@@ -10,6 +10,7 @@ const newProject = (() => {
     function submit() {
         createProject(name.value, description.value);
         resfreshProjects();
+        refreshPage();
         // Need to create a createProject function that alters the project name and project description in right container.
     }
 
