@@ -66,4 +66,15 @@ function updateTask(index, name, date) {
     activeTask.date = date;
 }
 
+function completeTask(index) {
+    let activeProject = allProjects.filter(project => project.active === true);
+    let activeTasks = activeProject[0].toDoListItems;
+    let activeTask = activeTasks[index];
+    if (activeTask.complete == false) {
+        activeTask.complete = true;
+    } else {
+        activeTask.complete = false; 
+    }
+}
+
 export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask, updateTask}

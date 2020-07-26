@@ -66,7 +66,8 @@ function createTaskListeners() {
         btn.addEventListener('click', (e) => {
             let datasetValue = e.target.parentNode.parentNode.dataset.value;
             console.log(datasetValue);
-            //btn.textContent = "X";
+            completeTask(datasetValue);
+            btn.textContent = "x";
         })
     })
 
