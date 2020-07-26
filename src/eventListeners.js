@@ -24,7 +24,6 @@ function eventListeners() {
     newTask.cancelBtn.addEventListener('click', newTask.hide);
     newTask.submitBtn.addEventListener('click', newTask.submit);
 
-
 }
 
 
@@ -61,6 +60,15 @@ function createProjectBtnListeners(){
 }
 
 function createTaskListeners() {
+
+    let checkbox = document.querySelectorAll('.checkbox');
+    checkbox.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            let datasetValue = e.target.parentNode.parentNode.dataset.value;
+            console.log(datasetValue);
+            //btn.textContent = "X";
+        })
+    })
 
     let deleteTaskBtns = document.querySelectorAll('#tasktrash.exampletrash');
     deleteTaskBtns.forEach(btn => {

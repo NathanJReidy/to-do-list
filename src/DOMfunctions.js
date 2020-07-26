@@ -14,8 +14,9 @@ const newProject = (() => {
     }
 
     function hide() {
-        newProjectForm = document.querySelector('.modalwrap');
+        let newProjectForm = document.querySelector('.modalwrap');
         newProjectForm.style.display = 'none';
+        console.log("newProject.hide() runs!");
     }
 
     return {
