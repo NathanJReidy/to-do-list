@@ -1,4 +1,4 @@
-import {createProject, createTask, addLatestProject, updateProject} from './logic';
+import {createProject, createTask, addLatestProject, updateProject, updateTask} from './logic';
 import {resfreshProjects, refreshTaskList, clearTasks, loadActiveToDos} from './DOMload';
 
 const newProject = (() => {
@@ -112,17 +112,25 @@ const editTask = (() => {
     const cancelBtn = document.querySelector('.edittaskcancelbtn');
     const submitBtn = document.querySelector('.edittasksubmitbtn');
 
-    let allForms = document.querySelectorAll('#editAllTasks.addblock');
-    let allTasks = document.querySelectorAll('#allTasks.addblock');
 
     function show(index) {
-        allTasks[index].style.display = 'none';
-        allForms[index].style.display = 'block';
+        let allForms = document.querySelectorAll('#editAllTasks.addblock');
+        let allTasks = document.querySelectorAll('#taskContainer.alllistedtasks');
+
+        let selectedTask = allTasks[index];
+        selectedTask.style.display = 'none';
+        let selectedForm = allForms[index];
+        selectedForm.style.display = 'block';
     }
 
     function hide(index) {
+        let allForms = document.querySelectorAll('#editAllTasks.addblock');
+        let allTasks = document.querySelectorAll('#taskContainer.alllistedtasks');
+
         allTasks[index].style.display = 'block';
         allForms[index].style.display = 'none';
+
+        console.log("editTask.hide runs");
     }
 
     function disappear() {
@@ -134,8 +142,13 @@ const editTask = (() => {
         task.style.display = 'none';
     }
 
-    function submit() {
-        //Need to add something here 
+    function submit(index) {
+        let inputName = document.querySelectorAll('.edittaskname');
+        let inputDate = document.querySelectorAll('.edittaskdate');
+        let name = inputName[index].value;
+        let date = inputDate[index].value;
+
+        updateTask(index, name, date);
     }
 
     return {

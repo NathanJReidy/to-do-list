@@ -79,6 +79,7 @@ function loadTasks(task, index) {
     const listedTasks = document.createElement('div');
     listedTasks.classList.add('alllistedtasks');
     listedTasks.dataset.value = index;
+    listedTasks.id = "taskContainer";
 
     const leftDiv = document.createElement('div');
     leftDiv.classList.add('leftdiv');
@@ -129,27 +130,31 @@ function loadTasks(task, index) {
     allTasksContainer.appendChild(listedTasks);
 
     // Create the edit tasks UI 
-    //let allForms = document.querySelectorAll('#editAllTasks.addblock');
+    //const allForms = document.querySelectorAll('#editAllTasks.addblock');
     //let allTasks = document.querySelectorAll('#allTasks.addblock');
 
     const editAllTasks = document.createElement('div');
-    editAllTasks.classList.add('#editAllTasks.addblock');
+    editAllTasks.classList.add('addblock');
+    editAllTasks.style.display = 'none';
+    editAllTasks.id = "editAllTasks";
+    editAllTasks.dataset.value = index;
 
     const editAllListedTasks = document.createElement('div');
-    editAllListedTasks.classList.add('#editAllListedTasks.alllistedtasks');
+    editAllListedTasks.classList.add('alllistedtasks');
+    editAllListedTasks.id = "editAllListedTasks";
 
     const divBlock11 = document.createElement('div');
-    divBlock11.classList.add('.div-block-11');
+    divBlock11.classList.add('div-block-11');
 
     const editalltasksagain = document.createElement('div');
-    editalltasksagain.classList.add('.editalltasks');
+    editalltasksagain.classList.add('editalltasks');
 
     const editTasksForm = document.createElement('div');
     editTasksForm.classList.add('edittasksform');
     editTasksForm.classList.add('w-form');
 
     const form = document.createElement('form');
-    form.classList.add('.edittasksdivform');
+    form.classList.add('edittasksdivform');
     form.id = 'email-form-2';
 
     const inputName = document.createElement('input');
@@ -187,6 +192,10 @@ function loadTasks(task, index) {
     divBlock11.appendChild(editalltasksagain);
     editAllListedTasks.appendChild(divBlock11);
     editAllTasks.appendChild(editAllListedTasks);
+
+    allTasksContainer.appendChild(editAllTasks);
+    //listedTasks.append(editAllTasks);
+    //allTasksContainer.appendChild(listedTasks);
 
 }
 

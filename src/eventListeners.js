@@ -75,9 +75,22 @@ function createTaskListeners() {
             let datasetValue = e.target.parentNode.parentNode.dataset.value;
             console.log(`datasetValue is ${datasetValue}`);
             editTask.show(datasetValue);
+            editTaskBtnListeners(datasetValue);
 
         })
     })
 }
 
-export {eventListeners, createProjectBtnListeners, createTaskListeners};
+function editTaskBtnListeners(index) {
+    let cancelBtns = document.querySelectorAll('.edittaskcancelbtn');
+    cancelBtns[index].addEventListener('click', () => editTask.hide(index));
+
+    let submitBtns = document.querySelectorAll('.edittasksubmitbtn');
+    submitBtns[index].addEventListener('click', () => {
+        editTask.submit(index);
+        editTask.hide(index);
+        refreshTaskList();
+    })
+}
+
+export {eventListeners, createProjectBtnListeners, createTaskListeners, editTaskBtnListeners};
