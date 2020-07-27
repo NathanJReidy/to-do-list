@@ -58,15 +58,15 @@ const editProject = (() => {
         // Need to make a function that updates the project name and project description shown on the screen based on the inputted submitted values.
     }
 
-    function disappear() {
-        // This removes the option to Edit project (for the initial page load)
-        editDiv.style.display = 'none';
-    }
+    // function disappear() {
+    //     // This removes the option to Edit project (for the initial page load)
+    //     editDiv.style.display = 'none';
+    // }
 
-    function reappear() {
-        // This makes the Edit project option appear again
-        editDiv.style.display = 'flex';
-    }
+    // function reappear() {
+    //     // This makes the Edit project option appear again
+    //     editDiv.style.display = 'flex';
+    // }
 
     return {
         editBtn,
@@ -75,8 +75,8 @@ const editProject = (() => {
         show,
         hide,
         submit,
-        disappear,
-        reappear,
+        // disappear,
+        // reappear,
     }
 })();
 
@@ -114,6 +114,15 @@ const newTask = (() => {
     
     }
 
+    // function disappear() {
+    //     // Makes functionality of adding new task disappear for the initial page load.
+    //     addBtn.style.display = 'none';
+    // }
+
+    // function reappear() {
+    //     addBtn.style.display = 'block';
+    // }
+
     return {
         addBtn,
         submitBtn, 
@@ -121,6 +130,9 @@ const newTask = (() => {
         show,
         hide,
         submit,
+        clear,
+        // disappear,
+        // reappear,
     }
 
 })();

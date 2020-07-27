@@ -18,8 +18,10 @@ function initialLoad() {
     newTask.hide();
     //editTask.hide();
     editTask.disappear();
-    editProject.disappear();
-    createEditDiv();
+    //editProject.disappear();
+    // newTask.disappear();
+    //createEditDiv();
+    // createAddTaskDiv();
 };
 
 function loadProjects() {
@@ -253,10 +255,16 @@ function loadActiveProject() {
 
 }
 
-function createEditDiv () {
-    if (allProjects.length >= 1) {
-        editProject.reappear();
-    }
-}
+// function createEditDiv () {
+//     if (allProjects.length >= 1) {
+//         editProject.reappear();
+//     }
+// }
 
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage, storeProjects, createEditDiv};
+// function createAddTaskDiv () {
+//     if (allProjects.length >= 1) {
+//         newTask.reappear();
+//     }
+// }
+
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage, storeProjects};
