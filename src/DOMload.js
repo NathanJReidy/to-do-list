@@ -1,6 +1,12 @@
 import {newProject, editProject, newTask, editTask} from './DOMfunctions'
 import {allProjects} from './index'
 import { createProjectBtnListeners, createTaskListeners } from './eventListeners';
+import Sortable from 'sortablejs';
+
+const projectContainer = document.querySelector('.projectlist');
+const taskContainer = document.querySelector('#allTasks');
+Sortable.create(projectContainer);
+Sortable.create(taskContainer);
 
 function initialLoad() {
     editProject.hide();

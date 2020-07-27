@@ -135,7 +135,7 @@ const editTask = (() => {
         let allForms = document.querySelectorAll('#editAllTasks.addblock');
         let allTasks = document.querySelectorAll('#taskContainer.alllistedtasks');
 
-        allTasks[index].style.display = 'block';
+        allTasks[index].style.display = 'flex';
         allForms[index].style.display = 'none';
 
         console.log("editTask.hide runs");

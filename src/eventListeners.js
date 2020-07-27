@@ -36,6 +36,7 @@ function eventListeners() {
 // Create dynamic event listeners for selecting (clicking) or deleting a specific project 
 function createProjectBtnListeners(){
     let projectBtns = document.querySelectorAll('#exampleProject');
+    //let projectBtns = document.querySelectorAll('#exampleProject.projectexample');
     projectBtns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             if (e.target.className != 'exampletrash') {
@@ -96,7 +97,10 @@ function createTaskListeners() {
 
 function editTaskBtnListeners(index) {
     let cancelBtns = document.querySelectorAll('.edittaskcancelbtn');
-    cancelBtns[index].addEventListener('click', () => editTask.hide(index));
+    cancelBtns[index].addEventListener('click', () => {
+        editTask.hide(index);
+        refreshTaskList();
+    })
 
     let submitBtns = document.querySelectorAll('.edittasksubmitbtn');
     submitBtns[index].addEventListener('click', () => {
