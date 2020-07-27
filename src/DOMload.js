@@ -9,7 +9,7 @@ Sortable.create(projectContainer);
 Sortable.create(taskContainer);
 
 function storeProjects() {
-    window.localStorage.setItem('user', JSON.stringify(allProjects))
+    window.localStorage.setItem('user', JSON.stringify(allProjects));
 }
 
 function initialLoad() {
