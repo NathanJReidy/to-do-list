@@ -3,6 +3,7 @@ import {allProjects} from './index'
 import { createProjectBtnListeners, createTaskListeners } from './eventListeners';
 import Sortable from 'sortablejs';
 
+
 const projectContainer = document.querySelector('.projectlist');
 const taskContainer = document.querySelector('#allTasks');
 Sortable.create(projectContainer);
@@ -115,7 +116,10 @@ function loadTasks(task, index) {
 
     const dueDateText = document.createElement('div');
     dueDateText.classList.add('duedatetext');
-    dueDateText.textContent = task.date; 
+    //dueDateText.textContent = task.date; 
+    var moment = require('moment');
+    let dueDateFormatted = moment(task.date, "YYYY-MM-DD").fromNow();
+    dueDateText.textContent = dueDateFormatted;
 
     const editIcon = document.createElement('img');
     editIcon.src = 'images/edit-icon.png';
@@ -184,7 +188,7 @@ function loadTasks(task, index) {
     inputDate.classList.add('edittaskdate');
     inputDate.classList.add('w-input');
     inputDate.id = 'field-4';
-    inputDate.setAttribute("type", "text")
+    inputDate.setAttribute("type", "date")
     inputDate.value = task.date;
 
     const submitBtn = document.createElement('input');
