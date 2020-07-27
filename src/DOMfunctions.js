@@ -11,13 +11,11 @@ const newProject = (() => {
         createProject(name.value, description.value);
         resfreshProjects();
         refreshPage();
-        // Need to create a createProject function that alters the project name and project description in right container.
     }
 
     function hide() {
         let newProjectForm = document.querySelector('.modalwrap');
         newProjectForm.style.display = 'none';
-        console.log("newProject.hide() runs!");
     }
 
     return {
@@ -55,7 +53,6 @@ const editProject = (() => {
     function submit() {
         updateProject(name.value, description.value);
         resfreshProjects();
-        // Need to make a function that updates the project name and project description shown on the screen based on the inputted submitted values.
     }
 
     function disappear() {
@@ -164,8 +161,6 @@ const editTask = (() => {
 
         allTasks[index].style.display = 'flex';
         allForms[index].style.display = 'none';
-
-        console.log("editTask.hide runs");
     }
 
     function disappear() {

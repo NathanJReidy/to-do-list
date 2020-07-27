@@ -26,17 +26,8 @@ function eventListeners() {
 
 }
 
-
-// Create dynamic event listeners for editing or deleting a specific task
-//editTask.deleteBtn.addEventListener('click', editTask.deleteTask);
-//editTask.editBtn.addEventListener('click', editTask.show);
-//editTask.cancelBtn.addEventListener('click', editTask.hide);
-//editTask.submitBtn.addEventListener('click', editTask.submit);
-
 // Create dynamic event listeners for selecting (clicking) or deleting a specific project 
 function createProjectBtnListeners(){
-    //let projectBtns = document.querySelectorAll('#exampleProject');
-    // Above one works but you need to actually click the project text to trigger it.
     let projectBtns = document.querySelectorAll('#exampleProject.projectexample');
     projectBtns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
@@ -52,8 +43,6 @@ function createProjectBtnListeners(){
     deleteProjectBtns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             let datasetValue = e.target.parentElement.firstElementChild.dataset.value;
-            console.log(e);
-            console.log(`The datasetValue (index) is ${datasetValue}`);
             deleteProject(datasetValue);
             refreshPage();
         })
@@ -62,15 +51,12 @@ function createProjectBtnListeners(){
 }
 
 function createTaskListeners() {
-
     let checkbox = document.querySelectorAll('.checkbox');
     checkbox.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let datasetValue = e.target.parentNode.parentNode.dataset.value;
-            console.log(datasetValue);
             completeTask(datasetValue);
             editTask.checkbox(btn);
-            //btn.textContent = "x";
         })
     })
 
@@ -88,7 +74,6 @@ function createTaskListeners() {
     editTaskBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let datasetValue = e.target.parentNode.parentNode.dataset.value;
-            console.log(`datasetValue is ${datasetValue}`);
             editTask.show(datasetValue);
             editTaskBtnListeners(datasetValue);
 

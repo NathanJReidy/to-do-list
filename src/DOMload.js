@@ -3,7 +3,6 @@ import {allProjects} from './index'
 import { createProjectBtnListeners, createTaskListeners } from './eventListeners';
 import Sortable from 'sortablejs';
 
-
 const projectContainer = document.querySelector('.projectlist');
 const taskContainer = document.querySelector('#allTasks');
 Sortable.create(projectContainer);
@@ -16,7 +15,6 @@ function storeProjects() {
 function initialLoad() {
     editProject.hide();
     newTask.hide();
-    //editTask.hide();
     editTask.disappear();
     editProject.disappear();
     newTask.disappear();
@@ -24,18 +22,10 @@ function initialLoad() {
         createEditDiv();
         createAddTaskDiv();
     }
-    //createEditDiv();
-    // createAddTaskDiv();
 };
 
 function loadProjects() {
     allProjects.forEach((project, index) => {
-        // create divs to append to container div forEach project 
-        // added in left container 
-    //     <div class="projectlist">
-    //     <div id="exampleProject" class="projectexample">
-    //       <div class="exampletextblock">Project Moonshot</div><img src="images/trash-icon.png" height="" width="20" alt="" class="exampletrash"></div>
-    //   </div>
         const container = document.querySelector('.projectlist');
        
         const mainDiv = document.createElement('div');
@@ -44,7 +34,6 @@ function loadProjects() {
         if (project.active === true) {
             mainDiv.classList.add('active');
         }
-        // NEW:
         mainDiv.dataset.value = index;
 
         const subDiv = document.createElement('div');
@@ -63,7 +52,6 @@ function loadProjects() {
         mainDiv.appendChild(subDiv);
         mainDiv.appendChild(image);
         container.appendChild(mainDiv);
-
     })
 }
 
@@ -126,7 +114,7 @@ function loadTasks(task, index) {
 
     const dueDateText = document.createElement('div');
     dueDateText.classList.add('duedatetext');
-    //dueDateText.textContent = task.date; 
+    // Use moment module for date formatting: 
     var moment = require('moment');
     let dueDateFormatted = moment(task.date, "YYYY-MM-DD").fromNow();
     dueDateText.textContent = dueDateFormatted;
@@ -160,8 +148,6 @@ function loadTasks(task, index) {
     allTasksContainer.appendChild(listedTasks);
 
     // Create the edit tasks UI 
-    //const allForms = document.querySelectorAll('#editAllTasks.addblock');
-    //let allTasks = document.querySelectorAll('#allTasks.addblock');
 
     const editAllTasks = document.createElement('div');
     editAllTasks.classList.add('addblock');
@@ -224,12 +210,7 @@ function loadTasks(task, index) {
     editAllTasks.appendChild(editAllListedTasks);
 
     allTasksContainer.appendChild(editAllTasks);
-    //listedTasks.append(editAllTasks);
-    //allTasksContainer.appendChild(listedTasks);
-
 }
-
-
 
 function loadActiveToDos() {
     allProjects.forEach((project) => {
@@ -240,9 +221,6 @@ function loadActiveToDos() {
         })
     })
 }
-
-
-
 
 function loadActiveProject() {
     if (allProjects.length == 0) {

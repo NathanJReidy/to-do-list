@@ -10,8 +10,7 @@ const createProject = (name, description) => {
         toDoListItems: [],
         active: true,
     })
-    console.log("createProject ran successfully!")
-    console.log(allProjects);
+
     createEditDiv();
     createAddTaskDiv();
     storeProjects();
@@ -89,6 +88,5 @@ function completeTask(index) {
     }
     storeProjects();
 }
-
 
 export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask, updateTask, completeTask}
