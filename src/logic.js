@@ -1,4 +1,5 @@
 import {allProjects} from './index'
+import {storeProjects} from './DOMload'
 
 const createProject = (name, description) => {
     clearActiveProjects();
@@ -10,6 +11,7 @@ const createProject = (name, description) => {
     })
     console.log("createProject ran successfully!")
     console.log(allProjects);
+    storeProjects();
 }
 
 const createTask = (name, date) => {
@@ -21,6 +23,7 @@ const createTask = (name, date) => {
         active: false,
         complete: false,
     })
+    storeProjects();
 }
 
 function clearActiveProjects() {
@@ -29,18 +32,21 @@ function clearActiveProjects() {
             project.active = false;
         })
     }
+    storeProjects();
 }
 
 function updateProject(name, description) {
     let activeProject = allProjects.filter(project => project.active === true);
     activeProject[0].name = name;
     activeProject[0].description = description;
+    storeProjects();
 }
 
 function swapProject(index) {
     clearActiveProjects();
     let currentProject = allProjects[index];
     currentProject.active = true;
+    storeProjects();
 }
 
 function deleteProject(index) {
@@ -50,12 +56,14 @@ function deleteProject(index) {
     if (allProjects.length >= 1) {
         allProjects[allProjects.length - 1].active = true;
     }
+    storeProjects();
 }
 
 function deleteTask(index) {
     let activeProject = allProjects.filter(project => project.active === true);
     let activeTasks = activeProject[0].toDoListItems;
     activeTasks.splice(index, 1);
+    storeProjects();
 }
 
 function updateTask(index, name, date) {
@@ -64,6 +72,7 @@ function updateTask(index, name, date) {
     let activeTask = activeTasks[index];
     activeTask.name = name;
     activeTask.date = date;
+    storeProjects();
 }
 
 function completeTask(index) {
@@ -75,6 +84,7 @@ function completeTask(index) {
     } else {
         activeTask.complete = false; 
     }
+    storeProjects();
 }
 
 export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask, updateTask, completeTask}

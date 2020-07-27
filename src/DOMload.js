@@ -8,6 +8,10 @@ const taskContainer = document.querySelector('#allTasks');
 Sortable.create(projectContainer);
 Sortable.create(taskContainer);
 
+function storeProjects() {
+    window.localStorage.setItem('user', JSON.stringify(allProjects))
+}
+
 function initialLoad() {
     editProject.hide();
     newTask.hide();
@@ -244,4 +248,4 @@ function loadActiveProject() {
 }
 
 
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage, storeProjects};

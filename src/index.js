@@ -8,6 +8,8 @@ initialLoad();
 eventListeners();
 createProjectBtnListeners();
 createTaskListeners();
-//loadProjects();
+
+console.log(window.localStorage);
+console.log(`Window local storage is ${window.localStorage}`);
 
 export {allProjects};
