@@ -35,8 +35,9 @@ function eventListeners() {
 
 // Create dynamic event listeners for selecting (clicking) or deleting a specific project 
 function createProjectBtnListeners(){
-    let projectBtns = document.querySelectorAll('#exampleProject');
-    //let projectBtns = document.querySelectorAll('#exampleProject.projectexample');
+    //let projectBtns = document.querySelectorAll('#exampleProject');
+    // Above one works but you need to actually click the project text to trigger it.
+    let projectBtns = document.querySelectorAll('#exampleProject.projectexample');
     projectBtns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             if (e.target.className != 'exampletrash') {

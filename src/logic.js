@@ -12,8 +12,8 @@ const createProject = (name, description) => {
     })
     console.log("createProject ran successfully!")
     console.log(allProjects);
-    //createEditDiv();
-    //createAddTaskDiv();
+    createEditDiv();
+    createAddTaskDiv();
     storeProjects();
 }
 

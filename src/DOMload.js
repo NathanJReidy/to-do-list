@@ -18,8 +18,12 @@ function initialLoad() {
     newTask.hide();
     //editTask.hide();
     editTask.disappear();
-    //editProject.disappear();
-    // newTask.disappear();
+    editProject.disappear();
+    newTask.disappear();
+    if (allProjects.length >= 1) {
+        createEditDiv();
+        createAddTaskDiv();
+    }
     //createEditDiv();
     // createAddTaskDiv();
 };
@@ -40,6 +44,8 @@ function loadProjects() {
         if (project.active === true) {
             mainDiv.classList.add('active');
         }
+        // NEW:
+        mainDiv.dataset.value = index;
 
         const subDiv = document.createElement('div');
         subDiv.classList.add('exampletextBlock');
@@ -239,6 +245,17 @@ function loadActiveToDos() {
 
 
 function loadActiveProject() {
+    if (allProjects.length == 0) {
+        // If all of the projects are deleted, this will reset the entire page fresh.
+        clearProjects();
+        clearTasks();
+        const projectNameDisplayed = document.querySelector('.projectname');
+        const projectDescriptionDisplayed = document.querySelector('.projectdescription');
+        projectNameDisplayed.textContent = "Untitled Project";
+        projectDescriptionDisplayed.textContent = "This text should contain the project description.";
+        initialLoad();
+    }
+    
     let activeProject = allProjects.filter((project) => project.active === true);
     let activeProjectName = activeProject[0].name;
     let activeProjectDescription = activeProject[0].description;
@@ -255,16 +272,16 @@ function loadActiveProject() {
 
 }
 
-// function createEditDiv () {
-//     if (allProjects.length >= 1) {
-//         editProject.reappear();
-//     }
-// }
+function createEditDiv () {
+    if (allProjects.length >= 1) {
+        editProject.reappear();
+    }
+}
 
-// function createAddTaskDiv () {
-//     if (allProjects.length >= 1) {
-//         newTask.reappear();
-//     }
-// }
+function createAddTaskDiv () {
+    if (allProjects.length >= 1) {
+        newTask.reappear();
+    }
+}
 
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage, storeProjects};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage, storeProjects, createEditDiv, createAddTaskDiv};
