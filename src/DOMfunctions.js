@@ -40,6 +40,7 @@ const editProject = (() => {
     const description = document.querySelector('.pdescform');
     const submitBtn = document.querySelector('.formsubmit');
     const cancelBtn = document.querySelector('.formcancel');
+    let editDiv = document.querySelector('#nameDescEdit > div.editdiv');
 
     function show() {
         projectInfo.style.display = 'none';
@@ -57,6 +58,16 @@ const editProject = (() => {
         // Need to make a function that updates the project name and project description shown on the screen based on the inputted submitted values.
     }
 
+    function disappear() {
+        // This removes the option to Edit project (for the initial page load)
+        editDiv.style.display = 'none';
+    }
+
+    function reappear() {
+        // This makes the Edit project option appear again
+        editDiv.style.display = 'flex';
+    }
+
     return {
         editBtn,
         submitBtn,
@@ -64,6 +75,8 @@ const editProject = (() => {
         show,
         hide,
         submit,
+        disappear,
+        reappear,
     }
 })();
 

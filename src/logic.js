@@ -1,5 +1,6 @@
 import {allProjects} from './index'
-import {storeProjects} from './DOMload'
+import {storeProjects, createEditDiv} from './DOMload'
+import { editProject } from './DOMfunctions';
 
 const createProject = (name, description) => {
     clearActiveProjects();
@@ -11,6 +12,7 @@ const createProject = (name, description) => {
     })
     console.log("createProject ran successfully!")
     console.log(allProjects);
+    createEditDiv();
     storeProjects();
 }
 
@@ -86,5 +88,6 @@ function completeTask(index) {
     }
     storeProjects();
 }
+
 
 export {createProject, createTask, clearActiveProjects, updateProject, swapProject, deleteProject, deleteTask, updateTask, completeTask}

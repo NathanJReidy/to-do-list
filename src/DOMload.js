@@ -18,6 +18,8 @@ function initialLoad() {
     newTask.hide();
     //editTask.hide();
     editTask.disappear();
+    editProject.disappear();
+    createEditDiv();
 };
 
 function loadProjects() {
@@ -251,5 +253,10 @@ function loadActiveProject() {
 
 }
 
+function createEditDiv () {
+    if (allProjects.length >= 1) {
+        editProject.reappear();
+    }
+}
 
-export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage, storeProjects};
+export {initialLoad, loadProjects, clearProjects, resfreshProjects, loadActiveProject, refreshTaskList, clearTasks, loadTasks, loadActiveToDos, refreshPage, storeProjects, createEditDiv};
